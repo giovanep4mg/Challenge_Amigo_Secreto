@@ -36,11 +36,11 @@ function adicionarAmigo() {
     // Cria um novo elemento "tag" -> <li></li> e salva na var "novoItem"
     let novoItem = document.createElement('li');
 
-    // Pega o nome que o usuário digitou "nomeAmigo" e salva na var "novoItem" onde está o elemento "li"
+    // Pega o nome que o usuário digitou "nomeAmigo" e salva na var "novoItem" onde está o elemento "li" => <li> nome adicionado </li>
     novoItem.textContent = nomeAmigo; 
 
-    // 
-    listaResultados.appendChild(novoItem); // Adiciona o <li> na lista
+    //  Pega novo elemento com o nome e adiciona dentro da tag "ul" => <ul> <li> nome adicionado </li> </ul>
+    listaResultados.appendChild(novoItem); 
 }
 
 
@@ -51,7 +51,7 @@ function sortearAmigo(){
     let quantidade = listaAmigos.length;
     console.log(`Quantidade dentro da lista: ${quantidade}`);
 
-    // Verificar ->> Se a quantidade de amigos é maior que zero
+    // Verificar ->> Se a quantidade de amigos é maior que zero, se foi preenchida
     if(quantidade > 0 ){
 
         // Gerar um número aleatório de 0 há até a quantidade de amigos adicionados
@@ -65,7 +65,7 @@ function sortearAmigo(){
         console.log(`Resultado do sorteio: ${resultadoSorteio}`);
 
         // Adicionar o resultado na página
-        document.getElementById('resultado').innerHTML = resultadoSorteio;
+        document.getElementById('resultado').innerHTML = `<span style="color: red;">Sorteado: </span> ${resultadoSorteio}`;
 
 		// Remover o nome sorteado da lista exibida na página
 		// Vai pegar os nomes que estão na "listaAmigos"
@@ -93,10 +93,12 @@ function sortearAmigo(){
 		// Exibi mensagem no console para verificação
         console.log("Erro: A lista de amigos está vazia. Adicione nomes antes de sortear.");
 		// Exibi uma caixa de alerta avisando o usuário
-		alert("Erro: A lista de amigos está vazia. Adicione nomes antes de sortear.");
+        alert("Erro: A lista de amigos está vazia. Adicione nomes antes de sortear.");
+        
     }
     
 }
+
 
 
 
